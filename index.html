@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <html>
-
   <head>
-    <script type="text/javascript" src="./index.js" defer=""></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faça sua pergunta</title>
+    
+    <script type="text/javascript" src="./index.js" defer></script>
     <link rel="stylesheet" href="./index.css">
   </head>
 
@@ -15,8 +19,7 @@
       <h1>Vou revelar o seu destino!</h1>
       <p>Clique em fazer pergunta para que seu destino seja revelado.</p>
       <input id="inputPergunta" type="text" placeholder="Digite a sua pergunta" />
-
-      <button onclick="fazerPergunta()" id="btnBotao">Fazer pergunta</button>
+      <button id="buttonPerguntar" onclick="fazerPergunta()">Fazer pergunta</button>
 
       <h3 id="resposta"></h3>
 

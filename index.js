@@ -1,27 +1,31 @@
 const elementoResposta  = document.querySelector("#resposta")
 const inputPergunta     = document.querySelector("#inputPergunta")
+const buttonPerguntar   = document.querySelector('#buttonPerguntar')
+
+// Respostas possiveis
 const respostas         = [
   "Certeza!",
-  "N„o tenho tanta certeza.",
-  "… decididamente assim.",
-  "N„o conte com isso.",
-  "Sem d˙vidas!",
+  "N√£o tenho tanta certeza.",
+  "√â decididamente assim.",
+  "N√£o conte com isso.",
+  "Sem d√∫vidas!",
   "Pergunte novamente mais tarde.",
   "Sim, definitivamente!",
-  "Minha resposta È n„o.",
-  "VocÍ pode contar com isso.",
-  "Melhor n„o te dizer agora.",
+  "Minha resposta √© n√£o.",
+  "Voc√™ pode contar com isso.",
+  "Melhor n√£o te dizer agora.",
   "A meu ver, sim.",
-  "Minhas fontes dizem n„o.",
+  "Minhas fontes dizem n√£o.",
   "Provavelmente.",
-  "N„o È possÌvel prever agora.",
+  "N√£o √© poss√≠vel prever agora.",
   "Perspectiva boa.",
-  "As perspectivas n„o s„o t„o boas.",
+  "As perspectivas n√£o s√£o t√£o boas.",
   "Sim.",
   "Concentre-se e pergunte novamente.",
   "Sinais apontam que sim.",
 ]
 
+// Clique em fazer pergunta
 function fazerPergunta() {
 
   if(inputPergunta.value == "") {
@@ -29,14 +33,21 @@ function fazerPergunta() {
     return 
   }
 
+  buttonPerguntar.setAttribute("disabled", true)
+
   const pergunta = "<div>" + inputPergunta.value + "</div>"
 
+  // Gerando n√∫mero aleat√≥rio
   const totalRespostas  = respostas.length
   const numeroAleatorio = Math.floor(Math.random() * totalRespostas) 
 
   elementoResposta.innerHTML = pergunta + respostas[numeroAleatorio];
 
+  elementoResposta.style.opacity = 1;
+
+  // Ap√≥s 3 segundos a resposta some
   setTimeout(function() {
     elementoResposta.style.opacity = 0;
+    buttonPerguntar.removeAttribute("disabled");
   }, 3000)
 }

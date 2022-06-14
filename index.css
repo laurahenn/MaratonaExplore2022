@@ -1,6 +1,7 @@
-/* Comentário */
+/* Comentï¿½rio */
 * {
   margin: 0;
+  box-sizing: border-box; 
 }
 
 body {
@@ -13,7 +14,7 @@ body {
 #container {
   width: 80%;
   max-width: 400px;
-  margin-top: 20%;
+  margin-top: 5%;
   margin-inline: auto;
 
   /* border: 2px dotted red; */
